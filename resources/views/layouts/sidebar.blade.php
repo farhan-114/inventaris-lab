@@ -92,6 +92,12 @@
             📊 Stok
         </a>
 
+        <!-- Barang Keluar -->
+        <a href="{{ route('barang-keluar.index') }}" 
+            class="block py-2 px-4 rounded transition {{ request()->routeIs('barang-keluar.*') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 text-gray-300' }}">
+            📤 Barang Keluar
+        </a>
+
         <!-- Peminjaman -->
         <a href="{{ route('peminjaman.index') }}"
             class="block py-2 px-4 rounded transition {{ request()->routeIs('peminjaman.*') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 text-gray-300' }}">

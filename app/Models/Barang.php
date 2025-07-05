@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Barang extends Model
 {
-    protected $table = 'barangs'; // 👈 beri tahu Laravel nama tabel sebenarnya
+    protected $table = 'barangs';
 
     protected $fillable = [
         'kode_barang',
@@ -15,4 +15,10 @@ class Barang extends Model
         'stok',
         'satuan',
     ];
+
+    // 👇 Tambahkan ini
+    public function barangKeluars()
+    {
+        return $this->hasMany(BarangKeluar::class);
+    }
 }

@@ -20,3 +20,20 @@
         </div>
     </div>
 </x-app-layout>
+
+@extends('layouts.app')
+
+@section('content')
+    <h1 class="text-2xl font-bold mb-4">Dashboard</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow">
+            <h2 class="text-lg font-semibold">Jumlah Barang</h2>
+            <p class="text-3xl font-bold text-blue-600">{{ $jumlahBarang }}</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+            <h2 class="text-lg font-semibold">Jumlah Barang Masuk</h2>
+            <p class="text-3xl font-bold text-green-600">{{ $jumlahBarangMasuk }}</p>
+        </div>
+    </div>
+@endsection
