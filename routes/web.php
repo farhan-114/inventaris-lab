@@ -10,6 +10,7 @@ use App\Http\Controllers\RakController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KategoriBarangController;
 use App\Http\Controllers\PenerimaanController;
+use App\Http\Controllers\RuanganController;
 use App\Models\Barang;
 use App\Models\BarangMasuk;
 
@@ -23,7 +24,7 @@ Route::get('/dashboard', function () {
     $jumlahBarang = Barang::count();
     $jumlahBarangMasuk = BarangMasuk::count();
     return view('dashboard', compact('jumlahBarang', 'jumlahBarangMasuk'));
-})->middleware(['auth'])->name('dashboard');    
+})->middleware(['auth'])->name('dashboard');
 
 Route::get('/profile', function () {
     return view('profile.edit');
@@ -32,7 +33,7 @@ Route::get('/profile', function () {
 // Resource Barang
 Route::middleware(['auth'])->group(function () {
     Route::view('scanqr', 'scanqr.index')->name('scanqr.index');
-    Route::view('ruangan', 'ruangan.index')->name('ruangan.index');
+    Route::resource('ruangan', RuanganController::class);
     Route::view('kategori-barang', 'barang_kategori.index')->name('kategori.index');
     Route::view('belanja', 'belanja.index')->name('belanja.index');
     Route::view('stok', 'stok.index')->name('stok.index');
@@ -58,4 +59,4 @@ Route::middleware(['auth'])->group(function () {
 });
 
 // ✅ Otentikasi Laravel Breeze
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
