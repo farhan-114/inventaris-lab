@@ -14,7 +14,13 @@ class Barang extends Model
         'kategori',
         'stok',
         'satuan',
+        'nama', 'rak_id',
     ];
+    
+    public function rak()   
+    {
+        return $this->belongsTo(Rak::class);
+    }
 
     // 👇 Tambahkan ini
     public function barangKeluars()

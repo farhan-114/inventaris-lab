@@ -9,7 +9,7 @@ class RakController extends Controller
 {
     public function index()
     {
-        $raks = Rak::all();
+        $raks = Rak::withCount('barangs')->get();
         return view('rak.index', compact('raks'));
     }
 

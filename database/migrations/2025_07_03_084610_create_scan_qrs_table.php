@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('scan_qrs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('barang_id')->constrained()->onDelete('cascade');
+            $table->foreignId('rak_id')->nullable()->constrained()->onDelete('set null');
+            $table->string('kode_qr')->unique();
             $table->timestamps();
         });
     }

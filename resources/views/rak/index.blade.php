@@ -1,39 +1,53 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800">Rak / Laci</h2>
+        <h2 class="font-semibold text-xl text-white leading-tight">
+            🗃️ Daftar Rak / Laci
+        </h2>
     </x-slot>
 
-    <div class="py-12 px-4">
-        <div class="bg-white p-6 rounded shadow">
-            <p class="text-gray-600">Ini adalah halaman dummy untuk fitur Rak / Laci.</p>
+    <div class="py-6 px-4 lg:px-12">
+        <div class="mb-4">
+            <a href="{{ route('rak.create') }}"
+                class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                + Tambah Rak
+            </a>
         </div>
-    </div>
-</x-app-layout>
 
-@extends('layouts.app')
+        <div class="bg-white rounded shadow p-4">
+            <table class="w-full border">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="border px-4 py-2">No</th>
 
-@section('content')
-    <div class="mb-4">
-        <h1 class="text-xl font-bold text-gray-800">📁 Daftar Rak / Laci</h1>
-        <a href="{{ route('rak.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded mt-2 inline-block">+ Tambah Rak</a>
-    </div>
+                        <th class="border px-4 py-2">Nama Rak</th>
 
-    <div class="bg-white p-4 shadow rounded">
-        <table class="w-full border">
-            <thead>
-                <tr class="bg-gray-100">
-                    <th class="border px-4 py-2">No</th>
-                    <th class="border px-4 py-2">Nama Rak</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($raks as $index => $rak)
+                        <th class="border px-4 py-2">Jumlah Barang</th>
+
+                        <th class="border px-4 py-2">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @forelse ($raks as $index => $rak)
                     <tr>
                         <td class="border px-4 py-2">{{ $index + 1 }}</td>
                         <td class="border px-4 py-2">{{ $rak->nama }}</td>
-                    </tr>
-                @endforeach
+                        <td class="border px-4 py-2">{{ $rak->barangs_count }}</td>
+                        <td class="border px-4 py-2">
+                            <a href="{{ route('rak.edit', $rak->id) }}" class="bg-yellow-500 text-white px-2 py-1 rounded text-sm">Edit</a>
+                            <form action="{{ route('rak.destroy', $rak->id) }}" method="POST" class="inline-block" onsubmit="return confirm('Yakin ingin menghapus rak ini?')">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="bg-red-600 text-white px-2 py-1 rounded text-sm">Hapus</button>
+                        </form>
+                    </td>
+                </tr>
+                @empty
+                <tr>
+                    <td colspan="4" class="text-center py-4 text-gray-500">Belum ada rak.</td>
+                </tr>
+                @endforelse
             </tbody>
         </table>
     </div>
-@endsection
+</div>
+</x-app-layout>
