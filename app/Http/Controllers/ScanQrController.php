@@ -2,63 +2,64 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Barang;
+use App\Models\Rak;
 use Illuminate\Http\Request;
 
-class ScanQrController extends Controller
+class ScanQRController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
-    {   
-        return view('scanqr.index');
+    {
+        $barangs = Barang::with('rak')->latest()->get();
+        return view('scanqr.index', compact('barangs'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $raks = Rak::all();
+        return view('scanqr.create', compact('raks'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_barang' => 'required|string|max:255',
+            'kode_qr' => 'required|unique:barangs,kode_qr',
+            'rak_id' => 'required|exists:raks,id',
+            'stok' => 'required|numeric|min:0',
+        ]);
+
+        Barang::create($request->all());
+
+        return redirect()->route('scanqr.index')->with('success', 'Barang berhasil ditambahkan.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function edit($id)
     {
-        //
+        $barang = Barang::findOrFail($id);
+        $raks = Rak::all();
+        return view('scanqr.edit', compact('barang', 'raks'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $barang = Barang::findOrFail($id);
+
+        $request->validate([
+            'nama_barang' => 'required|string|max:255',
+            'kode_qr' => 'required|unique:barangs,kode_qr,' . $barang->id,
+            'rak_id' => 'required|exists:raks,id',
+            'stok' => 'required|numeric|min:0',
+        ]);
+
+        $barang->update($request->all());
+
+        return redirect()->route('scanqr.index')->with('success', 'Barang berhasil diperbarui.');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function destroy($id)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        Barang::destroy($id);
+        return redirect()->route('scanqr.index')->with('success', 'Barang berhasil dihapus.');
     }
 }
