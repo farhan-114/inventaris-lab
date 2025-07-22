@@ -5,6 +5,7 @@
         </h2>
     </x-slot>
 
+<<<<<<< HEAD
     @if (session('success'))
         <div class="bg-green-100 text-green-800 p-2 rounded mb-4">
             {{ session('success') }}
@@ -16,6 +17,15 @@
             + Tambah Rak
         </a>
     </div>
+=======
+    <div class="py-6 px-4 lg:px-12">
+        <div class="mb-4">
+            <a href="{{ route('rak.create') }}"
+                class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                + Tambah Rak
+            </a>
+        </div>
+>>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
 
         <div class="bg-white rounded shadow p-4">
             <table class="w-full border">

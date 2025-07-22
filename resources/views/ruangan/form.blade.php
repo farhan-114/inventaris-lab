@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <x-app-layout>
     <div class="max-w-xl mx-auto bg-white p-6 shadow-md rounded">
         <h2 class="text-2xl font-semibold mb-4">{{ $title }}</h2>
@@ -8,17 +9,37 @@
             </div>
         @endif
 
+=======
+@extends('layouts.app')
+
+@section('content')
+    <h2 class="text-2xl font-semibold mb-4">{{ $title }}</h2>
+
+    @if (session('success'))
+        <div class="bg-green-100 text-green-800 p-2 rounded mb-4">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    <div class="bg-white p-6 shadow-md rounded">
+>>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
         <form method="POST" action="{{ $action }}">
             @csrf
             @if (isset($ruangan))
                 @method('PUT')
             @endif
+<<<<<<< HEAD
 
+=======
+>>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
             <div class="mb-4">
                 <label for="name" class="block text-gray-700 font-medium mb-1">Nama Ruangan</label>
                 <input type="text" name="name" id="name" value="{{ old('name') ?? ($ruangan->name ?? '') }}" class="w-full border rounded px-3 py-2" required>
             </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
             <div class="mb-4">
                 <label for="is_active" class="block text-gray-700 font-medium mb-1">Status</label>
                 <select name="is_active" id="is_active" class="w-full border rounded px-3 py-2">
@@ -35,4 +56,8 @@
             </div>
         </form>
     </div>
+<<<<<<< HEAD
 </x-app-layout>
+=======
+@endsection
+>>>>>>> 93414ca016bf79be1f68fc26e28200116851424f

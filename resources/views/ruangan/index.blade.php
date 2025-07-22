@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-white">
             Data Ruangan
         </h2>
     </x-slot>
+=======
+@extends('layouts.app')
+
+@section('content')
+    <h2 class="text-2xl font-semibold mb-4">Ruangan</h2>
+>>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
 
     @if (session('success'))
         <div class="bg-green-100 text-green-800 p-2 rounded mb-4">
@@ -17,7 +24,11 @@
         </a>
     </div>
 
+<<<<<<< HEAD
     <div class="bg-white rounded shadow p-4 overflow-x-auto">
+=======
+    <div class="bg-white rounded shadow p-4">
+>>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
         <table class="w-full border">
             <thead>
                 <tr class="bg-gray-100">
@@ -45,10 +56,18 @@
                     </tr>
                 @empty
                     <tr>
+<<<<<<< HEAD
                         <td colspan="4" class="text-center py-4 text-gray-500">Belum ada data.</td>
+=======
+                        <td colspan="6" class="text-center py-4 text-gray-500">Belum ada data.</td>
+>>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
                     </tr>
                 @endforelse
             </tbody>
         </table>
     </div>
+<<<<<<< HEAD
 </x-app-layout>
+=======
+@endsection
+>>>>>>> 93414ca016bf79be1f68fc26e28200116851424f

@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Models\Peminjaman;
 use App\Models\Barang;
+=======
+>>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
 use Illuminate\Http\Request;
 
 class PeminjamanController extends Controller
 {
+<<<<<<< HEAD
     public function index()
     {
         $peminjaman = Peminjaman::with('barang')->latest()->get();
@@ -38,3 +42,7 @@ class PeminjamanController extends Controller
         return redirect()->route('peminjaman.index')->with('success', 'Data peminjaman berhasil ditambahkan.');
     }
 }
+=======
+    //
+}
+>>>>>>> 93414ca016bf79be1f68fc26e28200116851424f

@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Models\Belanja;
+=======
+>>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
 use Illuminate\Http\Request;
 
 class BelanjaController extends Controller
 {
     public function index()
     {
+<<<<<<< HEAD
         $belanjas = Belanja::latest()->get();
         return view('belanja.index', compact('belanjas'));
     }
@@ -57,5 +61,8 @@ class BelanjaController extends Controller
     {
         $belanja->delete();
         return redirect()->route('belanja.index')->with('success', 'Belanja berhasil dihapus!');
+=======
+        return view('belanja.index');
+>>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
     }
 }

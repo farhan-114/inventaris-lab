@@ -1,5 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
+<<<<<<< HEAD
         <h2 class="font-semibold text-xl text-white leading-tight">
             📦 Data Belanja Barang
         </h2>
@@ -52,5 +53,14 @@
                 @endforelse
             </tbody>
         </table>
+=======
+        <h2 class="font-semibold text-xl text-  ">Belanja Barang</h2>
+    </x-slot>
+
+    <div class="py-12 px-4">
+        <div class="bg-white p-6 rounded shadow">
+            <p class="text-gray-600">Ini adalah halaman Belanja Barang.</p>
+        </div>
+>>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
     </div>
 </x-app-layout>

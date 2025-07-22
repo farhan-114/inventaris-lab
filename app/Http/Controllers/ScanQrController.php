@@ -29,6 +29,7 @@ class ScanQRController extends Controller
             'stok' => 'required|numeric|min:0',
         ]);
 
+<<<<<<< HEAD
         Barang::create([
             'kode_barang' => 'BRG-' . time(),
             'nama_barang' => $request->nama_barang,
@@ -37,6 +38,9 @@ class ScanQRController extends Controller
             'stok' => $request->stok,
             'satuan' => 'pcs',
 ]);
+=======
+        Barang::create($request->all());
+>>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
 
         return redirect()->route('scanqr.index')->with('success', 'Barang berhasil ditambahkan.');
     }
