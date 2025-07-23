@@ -29,6 +29,7 @@ class ScanQRController extends Controller
             'stok' => 'required|numeric|min:0',
         ]);
 
+
         Barang::create([
             'kode_barang' => 'BRG-' . time(),
             'nama_barang' => $request->nama_barang,

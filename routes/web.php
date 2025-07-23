@@ -14,6 +14,7 @@ use App\Http\Controllers\RakController;
 use App\Http\Controllers\PenerimaanController;
 use App\Http\Controllers\ScanQRController;
 use App\Http\Controllers\RuanganController;
+use App\Http\Controllers\StokController;
 use App\Models\Barang;
 use App\Models\BarangMasuk;
 use App\Models\Rak;
