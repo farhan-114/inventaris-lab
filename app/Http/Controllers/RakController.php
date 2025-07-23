@@ -30,15 +30,13 @@ class RakController extends Controller
 
         return redirect()->route('rak.index')->with('success', 'Rak berhasil ditambahkan.');
     }
-<<<<<<< HEAD
+
     public function destroy($id)
     {
         $rak = \App\Models\Rak::findOrFail($id);
         $rak->delete();
-        
+
         return redirect()->route('rak.index')
         ->with('success', 'Rak berhasil dihapus.');
     }
-=======
->>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
 }

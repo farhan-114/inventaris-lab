@@ -11,11 +11,7 @@ return new class extends Migration {
             $table->id();
             $table->string('kode_barang')->unique();
             $table->string('nama_barang');
-<<<<<<< HEAD
             $table->string('kategori')->nullable(); // opsional
-=======
-            $table->string('kategori')->nullable(); // opsional jika kamu punya tabel kategori sendiri
->>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
             $table->integer('stok')->default(0);
             $table->string('satuan');
 

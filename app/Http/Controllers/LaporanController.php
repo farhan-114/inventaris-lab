@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-<<<<<<< HEAD
 use App\Models\Penerimaan;
 use App\Models\BarangKeluar;
 use Barryvdh\DomPDF\Facade\Pdf; // kalau pakai dompdf
@@ -43,10 +42,3 @@ class LaporanController extends Controller
         return $pdf->download('laporan-barang-keluar.pdf');
     }
 }
-=======
-
-class LaporanController extends Controller
-{
-    //
-}
->>>>>>> 93414ca016bf79be1f68fc26e28200116851424f

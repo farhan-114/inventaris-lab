@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
 use App\Models\Barang;
-=======
->>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
 use Illuminate\Http\Request;
 
 class StokController extends Controller
 {
-<<<<<<< HEAD
     public function index()
     {
         $barangs = Barang::with('rak')->get();
@@ -57,7 +53,3 @@ class StokController extends Controller
         return redirect()->route('stok.index')->with('success', 'Stok berhasil dihapus!');
     }
 }
-=======
-    //
-}
->>>>>>> 93414ca016bf79be1f68fc26e28200116851424f

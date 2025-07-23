@@ -93,13 +93,8 @@
         </a>
 
         <!-- Barang Keluar -->
-<<<<<<< HEAD
-        <a href="{{ route('barangkeluar.index') }}" 
+        <a href="{{ route('barangkeluar.index') }}"
             class="block py-2 px-4 rounded transition {{ request()->routeIs('barangkeluar.*') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 text-gray-300' }}">
-=======
-        <a href="{{ route('barang-keluar.index') }}" 
-            class="block py-2 px-4 rounded transition {{ request()->routeIs('barang-keluar.*') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 text-gray-300' }}">
->>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
             📤 Barang Keluar
         </a>
 
@@ -109,15 +104,12 @@
             📤 Peminjaman
         </a>
 
-<<<<<<< HEAD
         <!-- Pengembalian -->
         <a href="{{ route('pengembalian.index') }}"
             class="block py-2 px-4 rounded transition {{ request()->routeIs('pengembalian.*') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 text-gray-300' }}">
             🔙 Pengembalian
         </a>
 
-=======
->>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
         <!-- Laporan -->
         <a href="{{ route('laporan.index') }}"
             class="block py-2 px-4 rounded transition {{ request()->routeIs('laporan.*') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 text-gray-300' }}">
