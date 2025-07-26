@@ -8,11 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class BarangKeluar extends Model
 {
     use HasFactory;
-
-<<<<<<< HEAD
-    // Pilih salah satu saja $fillable
-=======
->>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2
     protected $fillable = [
         'barang_id',
         'jumlah',

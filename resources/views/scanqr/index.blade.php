@@ -30,7 +30,7 @@
                             <td class="border px-4 py-2">{{ $loop->iteration }}</td>
                             <td class="border px-4 py-2">{{ $barang->nama_barang }}</td>
                             <td class="border px-4 py-2">{{ $barang->kode_qr }}</td>
-                            <td class="border px-4 py-2">{{ $barang->rak->nama_rak ?? '-' }}</td>
+                            <td class="border px-4 py-2">{{ $barang->rak->nama ?? '-' }}</td>
                             <td class="border px-4 py-2">{{ $barang->stok }}</td>
                             <td class="border px-4 py-2">
                                 <a href="{{ route('scanqr.edit', $barang->id) }}" class="text-blue-600 hover:underline">Edit</a> |

@@ -20,6 +20,7 @@ class Barang extends Model
         'satuan',
         'nama',
         'rak_id',
+        'kode_qr',
     ];
     
     public function rak()   

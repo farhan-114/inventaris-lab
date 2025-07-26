@@ -28,7 +28,6 @@
                 </a>
             </div>
 
-<<<<<<< HEAD
             <!-- Card Stok -->
             <div class="bg-yellow-500 text-white p-6 rounded-lg shadow-md text-center transform transition duration-300 hover:scale-105">
                 <div class="text-4xl font-extrabold">{{ $jumlahStok }}</div>
@@ -39,8 +38,6 @@
                 </a>
             </div>
 
-=======
->>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2
             <!-- Card Peminjaman -->
             <div class="bg-green-500 text-white p-6 rounded-lg shadow-md text-center transform transition duration-300 hover:scale-105">
                 <div class="text-4xl font-extrabold">{{ $jumlahPeminjaman }}</div>

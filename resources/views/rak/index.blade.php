@@ -16,10 +16,6 @@
             + Tambah Rak
         </a>
     </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2
         <div class="bg-white rounded shadow p-4">
             <table class="w-full border">
                 <thead>

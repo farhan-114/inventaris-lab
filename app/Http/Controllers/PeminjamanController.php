@@ -34,18 +34,14 @@ class PeminjamanController extends Controller
         'barang_id' => $request->barang_id,
         'jumlah' => $request->jumlah,
         'ruangan' => $request->ruangan,
-        'tanggal' => $request->tanggal_keluar,
-        'deskripsi' => $request->keterangan,
+        'tanggal_keluar' => $request->tanggal,
+        'deskripsi' => $request->deskripsi,
         ]);
 
-        $barang = Barang::find($request->barang_id);
-    $barang->jumlah -= $request->jumlah;
-    $barang->save();
+        $barang = Barang::findorFail($request->barang_id);
+        $barang->stok -= $request->jumlah;
+        $barang->save();
 
     return redirect()->route('peminjaman.index')->with('success', 'Data peminjaman berhasil ditambahkan.');
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2

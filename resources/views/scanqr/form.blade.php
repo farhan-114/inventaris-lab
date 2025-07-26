@@ -11,14 +11,19 @@
 
 <div>
     <label class="block">Rak</label>
-    <select name="rak_id" class="w-full border rounded p-2" required>
+    <select name="rak_id" class="...">
         <option value="">-- Pilih Rak --</option>
-        @foreach($raks as $rak)
-            <option value="{{ $rak->id }}" @if(old('rak_id', $barang->rak_id ?? '') == $rak->id) selected @endif>
-                {{ $rak->nama_rak }}
-            </option>
+        @foreach ($raks as $rak)
+        <option value="{{ $rak->id }}"
+            {{ old('rak_id', $barang->rak_id ?? '') == $rak->id ? 'selected' : '' }}>
+            {{ $rak->nama }}</option>
         @endforeach
     </select>
+</div>
+
+<div>
+    <label class="block">Satuan</label>
+    <input type="text" name="satuan" value="{{ old('satuan', $barang->satuan ?? '') }}" class="w-full border rounded p-2" required>
 </div>
 
 <div>

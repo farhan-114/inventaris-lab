@@ -38,7 +38,7 @@
                     {{-- Tanggal Otomatis --}}
                     <div class="mb-4">
                         <label for="tanggal" class="block font-medium text-sm text-gray-700">Tanggal</label>
-                        <input type="date" name="tanggal" value="{{ date('Y-m-d') }}" class="form-input mt-1 block w-full" required>
+                        <input type="date" name="tanggal" class="w-full border rounded px-3 py-2" required value="{{ old('tanggal') }}">
                     </div>
 
                     {{-- Keterangan --}}

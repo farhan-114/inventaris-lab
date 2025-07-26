@@ -37,7 +37,7 @@
                             <td class="border px-4 py-2">{{ $loop->iteration }}</td>
                             <td class="border px-4 py-2">{{ $item->barang->nama_barang }}</td>
                             <td class="border px-4 py-2">{{ $item->jumlah }}</td>
-                            <td class="border px-4 py-2">{{ $item->keterangan ?? '-' }}</td>
+                            <td class="border px-4 py-2">{{ $item->deskripsi}}</td>
                             <td class="border px-4 py-2">{{ $item->created_at->format('d-m-Y') }}</td>
                             <td class="border px-4 py-2">
                                 <a href="{{ route('barang-keluar.edit', $item->id) }}" class="text-blue-500 hover:underline">Edit</a>

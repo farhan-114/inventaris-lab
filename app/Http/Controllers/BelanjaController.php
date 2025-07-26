@@ -9,11 +9,9 @@ class BelanjaController extends Controller
 {
     public function index()
     {
-<<<<<<< HEAD
+
         $belanjas = Belanja::all();
-=======
         $belanjas = Belanja::latest()->get();
->>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2
         return view('belanja.index', compact('belanjas'));
     }
 
@@ -61,9 +59,6 @@ class BelanjaController extends Controller
     {
         $belanja->delete();
         return redirect()->route('belanja.index')->with('success', 'Belanja berhasil dihapus!');
-<<<<<<< HEAD
         return view('belanja.index');
-=======
->>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2
     }
 }
