@@ -18,13 +18,10 @@ class DatabaseSeeder extends Seeder
             UserAdminSeeder::class,
             BarangSeeder::class
         ]);
-<<<<<<< HEAD
-=======
 
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
->>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2
     }
 }
