@@ -11,19 +11,11 @@ return new class extends Migration {
             $table->id();
             $table->unsignedBigInteger('barang_id');
             $table->integer('jumlah');
-<<<<<<< HEAD
-            $table->text('deskripsi')->nullable();
-            $table->date('tanggal_keluar')->nullable();
-            $table->string('keterangan')->nullable();
+            $table->text('deskripsi')->nullable(); // lebih fleksibel
+            $table->date('tanggal_keluar')->default(now()); // otomatis tanggal hari ini
+            $table->string('keterangan')->nullable(); // kalau kamu butuh keterangan tambahan
             $table->timestamps();
 
-=======
-            $table->text('deskripsi'); // kolom deskripsi/alasan barang keluar
-            $table->date('tanggal_keluar')->default(now()); // default otomatis tanggal hari ini
-            $table->timestamps();
-
-            // Relasi ke tabel barangs
->>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2
             $table->foreign('barang_id')->references('id')->on('barangs')->onDelete('cascade');
         });
     }
@@ -32,8 +24,4 @@ return new class extends Migration {
     {
         Schema::dropIfExists('barang_keluars');
     }
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2
