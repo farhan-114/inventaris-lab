@@ -7,20 +7,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-<<<<<<< HEAD
-class User extends Authenticatable {
-    use HasFactory, Notifiable;
-
-    protected $fillable = [ 'name', 'email', 'username', 'password', 'role' ];
-
-    protected $hidden = [ 'password', 'remember_token' ];
-
-    public function getAuthIdentifierName()
-    {
-        return 'username';
-    }
-}
-=======
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
@@ -34,6 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'username',
         'password',
     ];
 
@@ -60,4 +47,3 @@ class User extends Authenticatable
         ];
     }
 }
->>>>>>> 93414ca016bf79be1f68fc26e28200116851424f

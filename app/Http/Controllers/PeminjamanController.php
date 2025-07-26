@@ -2,16 +2,12 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
 use App\Models\Peminjaman;
 use App\Models\Barang;
-=======
->>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
 use Illuminate\Http\Request;
 
 class PeminjamanController extends Controller
 {
-<<<<<<< HEAD
     public function index()
     {
         $peminjaman = Peminjaman::with('barang')->latest()->get();
@@ -20,7 +16,7 @@ class PeminjamanController extends Controller
 
     public function create()
     {
-        $barangs = \App\Models\Barang::with('stok')->get();
+        $barangs = \App\Models\Barang::all();
         return view('peminjaman.create', compact('barangs'));
     }
 
@@ -30,19 +26,22 @@ class PeminjamanController extends Controller
             'barang_id' => 'required|exists:barangs,id',
             'jumlah' => 'required|integer|min:1',
             'ruangan' => 'required|string',
-            'tanggal_keluar' => 'required|date',
+            'tanggal' => 'required|date',
             'deskripsi' => 'nullable|string',
         ]);
 
-        Peminjaman::create($request->all());
-        $barang = Barang::find($request->barang_id);
-        $barang->jumlah -= $request->jumlah;
-        $barang->save();
+        Peminjaman::create([
+        'barang_id' => $request->barang_id,
+        'jumlah' => $request->jumlah,
+        'ruangan' => $request->ruangan,
+        'tanggal' => $request->tanggal_keluar,
+        'deskripsi' => $request->keterangan,
+        ]);
 
-        return redirect()->route('peminjaman.index')->with('success', 'Data peminjaman berhasil ditambahkan.');
+        $barang = Barang::find($request->barang_id);
+    $barang->jumlah -= $request->jumlah;
+    $barang->save();
+
+    return redirect()->route('peminjaman.index')->with('success', 'Data peminjaman berhasil ditambahkan.');
     }
 }
-=======
-    //
-}
->>>>>>> 93414ca016bf79be1f68fc26e28200116851424f

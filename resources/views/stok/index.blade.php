@@ -1,6 +1,5 @@
 <x-app-layout>
     <x-slot name="header">
-<<<<<<< HEAD
         <h2 class="font-semibold text-xl text-white leading-tight">
             📦 Data Stok Barang
         </h2>
@@ -24,11 +23,12 @@
                         <th class="border px-4 py-2">Stok</th>
                         <th class="border px-4 py-2">Satuan</th>
                         <th class="border px-4 py-2">Rak</th>
+                        <th class="border px-4 py-2">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($barangs as $barang)
-                        <tr>
+                        <tr>    
                             <td class="border px-4 py-2">{{ $loop->iteration }}</td>
                             <td class="border px-4 py-2">{{ $barang->kode_barang }}</td>
                             <td class="border px-4 py-2">{{ $barang->nama_barang }}</td>
@@ -36,10 +36,13 @@
                             <td class="border px-4 py-2">{{ $barang->stok }}</td>
                             <td class="border px-4 py-2">{{ $barang->satuan }}</td>
                             <td class="border px-4 py-2">{{ $barang->rak->nama ?? '-' }}</td>
+                            <td class="border px-4 py-2 text-center">
+                                <a href="{{ route('stok.edit', $barang->id) }}" class="text-blue-600 hover:underline">Edit Stok</a>
+                            </td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="7" class="text-center py-4">Belum ada data stok barang.</td>
+                            <td colspan="8" class="text-center py-4">Belum ada data stok barang.</td>
                         </tr>
                     @endforelse
                 </tbody>
@@ -47,14 +50,3 @@
         </div>
     </div>
 </x-app-layout>
-=======
-        <h2 class="font-semibold text-xl text-white">Stok Barang</h2>
-    </x-slot>
-
-    <div class="py-12 px-4">
-        <div class="bg-white p-6 rounded shadow">
-            <p class="text-gray-600">Ini adalah halaman dummy untuk fitur Stok.</p>
-        </div>
-    </div>
-</x-app-layout>
->>>>>>> 93414ca016bf79be1f68fc26e28200116851424f

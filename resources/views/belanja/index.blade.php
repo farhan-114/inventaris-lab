@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-<<<<<<< HEAD
+
         <h2 class="font-semibold text-xl text-white leading-tight">
             📦 Data Belanja Barang
         </h2>
@@ -25,6 +25,7 @@
                     <th class="border px-4 py-2">Nama Barang</th>
                     <th class="border px-4 py-2">Jumlah</th>
                     <th class="border px-4 py-2">Harga</th>
+                    <th class="border px-4 py-2">Total</th>
                     <th class="border px-4 py-2">Tanggal</th>
                     <th class="border px-4 py-2">Aksi</th>
                 </tr>
@@ -36,6 +37,7 @@
                         <td class="border px-4 py-2">{{ $belanja->nama_barang }}</td>
                         <td class="border px-4 py-2">{{ $belanja->jumlah }}</td>
                         <td class="border px-4 py-2">Rp {{ number_format($belanja->harga, 0, ',', '.') }}</td>
+                        <td class="border px-4 py-2">Rp {{ number_format($belanja->jumlah * $belanja->harga, 0, ',', '.') }}</td>
                         <td class="border px-4 py-2">{{ $belanja->tanggal }}</td>
                         <td class="border px-4 py-2">
                             <a href="{{ route('belanja.edit', $belanja->id) }}" class="text-blue-600">Edit</a> |
@@ -53,14 +55,5 @@
                 @endforelse
             </tbody>
         </table>
-=======
-        <h2 class="font-semibold text-xl text-  ">Belanja Barang</h2>
-    </x-slot>
-
-    <div class="py-12 px-4">
-        <div class="bg-white p-6 rounded shadow">
-            <p class="text-gray-600">Ini adalah halaman Belanja Barang.</p>
-        </div>
->>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
     </div>
 </x-app-layout>

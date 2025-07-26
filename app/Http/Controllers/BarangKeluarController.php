@@ -11,21 +11,13 @@ class BarangKeluarController extends Controller
     public function index()
     {
         $barangKeluars = BarangKeluar::with('barang')->latest()->get();
-<<<<<<< HEAD
-        return view('barangkeluar.index', compact('barangKeluars'));
-=======
         return view('barang-keluar.index', compact('barangKeluars'));
->>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
     }
 
     public function create()
     {
         $barangs = Barang::all();
-<<<<<<< HEAD
-        return view('barangkeluar.create', compact('barangs'));
-=======
         return view('barang-keluar.create', compact('barangs'));
->>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
     }
 
     public function store(Request $request)
@@ -33,7 +25,6 @@ class BarangKeluarController extends Controller
         $request->validate([
             'barang_id' => 'required|exists:barangs,id',
             'jumlah' => 'required|integer|min:1',
-<<<<<<< HEAD
             'deskripsi' => 'required|string',
         ]);
 
@@ -52,33 +43,10 @@ class BarangKeluarController extends Controller
                 'tanggal_keluar' => now(),
             ]);
 
-            return redirect()->route('barangkeluar.index')->with('success', 'Barang berhasil dikeluarkan.');
+            return redirect()->route('barang-keluar.index')->with('success', 'Barang berhasil dikeluarkan.');
         } else {
             return back()->with('error', 'Stok barang tidak mencukupi.');
         }
-    }
-
-    public function destroy($id)
-    {
-        $keluar = BarangKeluar::findOrFail($id);
-
-        // Tambahkan stok kembali
-        $barang = $keluar->barang;
-        $barang->stok += $keluar->jumlah;
-        $barang->save();
-
-        $keluar->delete();
-
-        return redirect()->route('barangkeluar.index')->with('success', 'Data barang keluar berhasil dihapus.');
-    }
-}
-=======
-            'keterangan' => 'nullable|string|max:255',
-        ]);
-
-        BarangKeluar::create($request->all());
-
-        return redirect()->route('barang-keluar.index')->with('success', 'Barang keluar berhasil ditambahkan!');
     }
 
     public function edit(BarangKeluar $barangKeluar)
@@ -102,9 +70,13 @@ class BarangKeluarController extends Controller
 
     public function destroy(BarangKeluar $barangKeluar)
     {
+        // Tambahkan stok kembali saat hapus
+        $barang = $barangKeluar->barang;
+        $barang->stok += $barangKeluar->jumlah;
+        $barang->save();
+
         $barangKeluar->delete();
 
         return redirect()->route('barang-keluar.index')->with('success', 'Barang keluar berhasil dihapus!');
     }
 }
->>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
