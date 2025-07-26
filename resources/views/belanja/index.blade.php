@@ -1,6 +1,9 @@
 <x-app-layout>
     <x-slot name="header">
+<<<<<<< HEAD
 
+=======
+>>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2
         <h2 class="font-semibold text-xl text-white leading-tight">
             📦 Data Belanja Barang
         </h2>

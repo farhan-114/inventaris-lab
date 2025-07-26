@@ -44,4 +44,8 @@ class PeminjamanController extends Controller
 
     return redirect()->route('peminjaman.index')->with('success', 'Data peminjaman berhasil ditambahkan.');
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2

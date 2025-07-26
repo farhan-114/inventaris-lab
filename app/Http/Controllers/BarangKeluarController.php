@@ -11,13 +11,21 @@ class BarangKeluarController extends Controller
     public function index()
     {
         $barangKeluars = BarangKeluar::with('barang')->latest()->get();
+<<<<<<< HEAD
         return view('barang-keluar.index', compact('barangKeluars'));
+=======
+        return view('barangkeluar.index', compact('barangKeluars'));
+>>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2
     }
 
     public function create()
     {
         $barangs = Barang::all();
+<<<<<<< HEAD
         return view('barang-keluar.create', compact('barangs'));
+=======
+        return view('barangkeluar.create', compact('barangs'));
+>>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2
     }
 
     public function store(Request $request)
@@ -49,6 +57,7 @@ class BarangKeluarController extends Controller
         }
     }
 
+<<<<<<< HEAD
     public function edit(BarangKeluar $barangKeluar)
     {
         $barangs = Barang::all();
@@ -80,3 +89,19 @@ class BarangKeluarController extends Controller
         return redirect()->route('barang-keluar.index')->with('success', 'Barang keluar berhasil dihapus!');
     }
 }
+=======
+    public function destroy($id)
+    {
+        $keluar = BarangKeluar::findOrFail($id);
+
+        // Tambahkan stok kembali
+        $barang = $keluar->barang;
+        $barang->stok += $keluar->jumlah;
+        $barang->save();
+
+        $keluar->delete();
+
+        return redirect()->route('barangkeluar.index')->with('success', 'Data barang keluar berhasil dihapus.');
+    }
+}
+>>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2

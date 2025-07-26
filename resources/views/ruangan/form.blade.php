@@ -13,7 +13,10 @@
             @if (isset($ruangan))
                 @method('PUT')
             @endif
+<<<<<<< HEAD
 
+=======
+>>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2
             <div class="mb-4">
                 <label for="name" class="block text-gray-700 font-medium mb-1">Nama Ruangan</label>
                 <input type="text" name="name" id="name" value="{{ old('name') ?? ($ruangan->name ?? '') }}" class="w-full border rounded px-3 py-2" required>
@@ -34,4 +37,8 @@
             </div>
         </form>
     </div>
+<<<<<<< HEAD
 </x-app-layout>
+=======
+</x-app-layout>
+>>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2

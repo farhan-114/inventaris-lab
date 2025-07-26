@@ -31,4 +31,14 @@ class StokController extends Controller
 
         return redirect()->route('stok.index')->with('success', 'Stok berhasil diperbarui!');
     }
+<<<<<<< HEAD
 }
+=======
+
+    public function destroy(Stok $stok)
+    {
+        $stok->delete();
+        return redirect()->route('stok.index')->with('success', 'Stok berhasil dihapus!');
+    }
+}
+>>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2

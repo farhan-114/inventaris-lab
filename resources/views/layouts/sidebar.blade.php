@@ -93,7 +93,11 @@
         </a>
 
         <!-- Barang Keluar -->
+<<<<<<< HEAD
         <a href="{{ route('barangkeluar.index') }}" 
+=======
+        <a href="{{ route('barangkeluar.index') }}"
+>>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2
             class="block py-2 px-4 rounded transition {{ request()->routeIs('barangkeluar.*') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 text-gray-300' }}">
             📤 Barang Keluar
         </a>

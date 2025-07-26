@@ -41,4 +41,8 @@ class LaporanController extends Controller
         $pdf = Pdf::loadView('laporan.pdf-keluar', compact('barangKeluar'));
         return $pdf->download('laporan-barang-keluar.pdf');
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2

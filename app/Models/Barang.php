@@ -16,10 +16,15 @@ class Barang extends Model
         'nama_barang',
         'kategori',
         'stok',
+<<<<<<< HEAD
+=======
+        'jumlah',
+>>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2
         'satuan',
         'nama',
         'rak_id',
     ];
+<<<<<<< HEAD
     
     public function rak()   
     {
@@ -31,3 +36,17 @@ class Barang extends Model
         return $this->hasMany(BarangKeluar::class);
     }
 }
+=======
+
+    public function stok()
+    {
+        return $this->hasOne(\App\Models\Stok::class);
+    }
+
+    // Relasi ke rak
+    public function rak()
+    {
+        return $this->belongsTo(Rak::class);
+    }
+}
+>>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2

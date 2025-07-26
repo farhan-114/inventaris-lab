@@ -1,6 +1,5 @@
 <x-app-layout>
     <x-slot name="header">
-<<<<<<< HEAD
         <h2 class="font-semibold text-xl text-white leading-tight">
             📊 Laporan Barang
         </h2>
@@ -10,10 +9,10 @@
         <form method="GET" class="mb-4 flex flex-wrap gap-2 items-center">
             <label class="font-semibold">Tanggal Awal</label>
             <input type="date" name="tanggal_awal" value="{{ request('tanggal_awal') }}" class="border rounded px-2 py-1">
-            
+
             <label class="font-semibold">Tanggal Akhir</label>
             <input type="date" name="tanggal_akhir" value="{{ request('tanggal_akhir') }}" class="border rounded px-2 py-1">
-            
+
             <button type="submit" class="bg-blue-500 text-white px-3 py-1 rounded">Filter</button>
             <a href="{{ route('laporan.index') }}" class="ml-2 text-gray-600">Reset</a>
         </form>
@@ -79,14 +78,3 @@
         </table>
     </div>
 </x-app-layout>
-=======
-        <h2 class="font-semibold text-xl text-white">Laporan</h2>
-    </x-slot>
-
-    <div class="py-12 px-4">
-        <div class="bg-white p-6 rounded shadow">
-            <p class="text-gray-600">Ini adalah halaman dummy untuk fitur Laporan.</p>
-        </div>
-    </div>
-</x-app-layout>
->>>>>>> 93414ca016bf79be1f68fc26e28200116851424f
