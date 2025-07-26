@@ -14,7 +14,7 @@
                     {{-- Nama Barang + Stok --}}
                     <div class="mb-4">
                         <label for="barang_id" class="block font-medium text-sm text-gray-700">Nama Barang</label>
-                        <select name="barang_id" class="form-select mt-1 block w-full">
+                        <select name="barang_id" class="form-select mt-1 block w-full" required>
                             @foreach ($barangs as $barang)
                                 <option value="{{ $barang->id }}">
                                     {{ $barang->nama_barang }} ({{ $barang->stok }} {{ $barang->satuan }})
@@ -33,12 +33,6 @@
                     <div class="mb-4">
                         <label for="ruangan" class="block font-medium text-sm text-gray-700">Ruangan</label>
                         <input type="text" name="ruangan" class="form-input mt-1 block w-full" required>
-                    </div>
-
-                    {{-- Tanggal Otomatis --}}
-                    <div class="mb-4">
-                        <label for="tanggal" class="block font-medium text-sm text-gray-700">Tanggal</label>
-                        <input type="date" name="tanggal" class="w-full border rounded px-3 py-2" required value="{{ old('tanggal') }}">
                     </div>
 
                     {{-- Keterangan --}}

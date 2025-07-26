@@ -14,8 +14,8 @@ class LaporanController extends Controller
         $tanggal_awal = $request->tanggal_awal;
         $tanggal_akhir = $request->tanggal_akhir;
 
-        $queryMasuk = Penerimaan::query();
-        $queryKeluar = BarangKeluar::query();
+        $queryMasuk = Penerimaan::with('barang');
+        $queryKeluar = BarangKeluar::with('barang');
 
         if ($tanggal_awal && $tanggal_akhir) {
             $queryMasuk->whereBetween('created_at', [$tanggal_awal, $tanggal_akhir]);
@@ -30,8 +30,8 @@ class LaporanController extends Controller
 
     public function exportPdfMasuk()
     {
-        $barangMasuk = Penerimaan::all();
-        $pdf = Pdf::loadView('laporan.pdf-masuk', compact('barangMasuk'));
+        $barangMasuk = Penerimaan::with('penerimaan')->get();
+        $pdf = Pdf::loadView('laporan.pdf-masuk', compact('penerimaan'));
         return $pdf->download('laporan-barang-masuk.pdf');
     }
 
@@ -41,8 +41,4 @@ class LaporanController extends Controller
         $pdf = Pdf::loadView('laporan.pdf-keluar', compact('barangKeluar'));
         return $pdf->download('laporan-barang-keluar.pdf');
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> e7f83e930b536a4ebe305d3e34eec83f69936ad2

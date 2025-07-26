@@ -29,7 +29,7 @@
                     <th class="border px-4 py-2">No</th>
                     <th class="border px-4 py-2">Nama Barang</th>
                     <th class="border px-4 py-2">Jumlah</th>
-                    <th class="border px-4 py-2">Deskripsi</th>
+                    <th class="border px-4 py-2">Keterangan</th>
                     <th class="border px-4 py-2">Tanggal Keluar</th>
                     <th class="border px-4 py-2">Aksi</th>
                 </tr>
@@ -43,8 +43,8 @@
                             ({{ $pinjam->barang->jumlah }} {{ $pinjam->barang->satuan }})
                         </td>
                         <td class="border px-4 py-2">{{ $pinjam->jumlah }} {{ $pinjam->barang->satuan }}</td>
-                        <td class="border px-4 py-2">{{ $pinjam->deskripsi }}</td>
-                        <td class="border px-4 py-2">{{ $pinjam->tanggal_keluar }}</td>
+                        <td class="border px-4 py-2">{{ $pinjam->keterangan }}</td>
+                        <td class="border px-4 py-2">{{ $pinjam->tanggal }}</td>
                         <td class="border px-4 py-2">
                             <a href="{{ route('peminjaman.edit', $pinjam->id) }}" class="text-blue-600">Edit</a> |
                             <form action="{{ route('peminjaman.destroy', $pinjam->id) }}" method="POST" class="inline" onsubmit="return confirm('Hapus data ini?')">

@@ -10,8 +10,13 @@ class Penerimaan extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama_barang',
+        'barang_id',
         'jumlah',
         'tanggal_terima',
     ];
+
+    public function barang()
+    {
+        return $this->belongsTo(Barang::class, 'barang_id');
+    }
 }
